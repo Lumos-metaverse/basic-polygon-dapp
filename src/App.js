@@ -16,9 +16,8 @@ function App() {
         console.log("Please install metamask");
         return;
       } else {
-        const accounts = await ethereum.request({
-          method: "eth_requestAccounts",
-        });
+        //add code here
+        const accounts = ""
         setCurrentAccount(accounts[0]);
         console.log("Connected", currentAccount);
       }
@@ -43,8 +42,8 @@ function App() {
   const getData = async () => {
     try {      
       const transactionContract = getEthereumContract();
-      const val = await transactionContract.getData();
-      // await val.wait()
+      // add code
+      const val = ""
       setMyData(val.toString());      
     } catch (error) {
       console.log(error);
@@ -54,7 +53,8 @@ function App() {
   const setData = async () => {
     try {      
       const transactionContract = getEthereumContract();
-      const val = await transactionContract.setData(myNumber);
+      // add code
+      const val = ""
       alert("Transaction Submitted, please wait for confirmation popup");
       await val.wait()
       console.log(val);
@@ -76,7 +76,7 @@ function App() {
         )}
         <br />
         <br />
-        <input type="text" placeholder="Enter a number" onChange={(e)=>(setMyNumber(e.target.value))} />
+        <input type="number" placeholder="Enter a number" onChange={(e)=>(setMyNumber(e.target.value))} />
         <button onClick={setData}>Set Data</button>
         <br />
         <br />
